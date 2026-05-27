@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TMFX Mentorship</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    min-height:100vh;
+}
+
+header{
+    padding:25px;
+    text-align:center;
+    border-bottom:1px solid #222;
+    background:#0b0b0b;
+}
+
+header h1{
+    color:#f5c400;
+    font-size:42px;
+    letter-spacing:3px;
+}
+
+header p{
+    color:#aaa;
+    margin-top:8px;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+.login-box{
+    background:#111;
+    padding:30px;
+    border-radius:15px;
+    border:1px solid #222;
+    text-align:center;
+    margin-top:50px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:#1a1a1a;
+    color:white;
+    font-size:16px;
+}
+
+button{
+    margin-top:20px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#f5c400;
+    color:black;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.video-section{
+    display:none;
+}
+
+.lesson{
+    background:#111;
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:30px;
+    border:1px solid #222;
+}
+
+.lesson h2{
+    color:#f5c400;
+    margin-bottom:15px;
+}
+
+video{
+    width:100%;
+    border-radius:12px;
+    background:black;
+}
+
+.note{
+    margin-top:12px;
+    color:#bbb;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.footer{
+    text-align:center;
+    padding:30px;
+    color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>TMFX</h1>
+    <p>Private Trading Mentorship Portal</p>
+</header>
+
+<div class="container">
+
+    <div class="login-box" id="loginBox">
+        <h2>Private Access</h2>
+
+        <p style="margin-top:10px;color:#aaa;">
+            Enter mentorship password to access lessons.
+        </p>
+
+        <input type="password" id="password" placeholder="Enter Password">
+
+        <button onclick="checkPassword()">Access Lessons</button>
+
+        <p id="error" style="margin-top:15px;color:red;"></p>
+    </div>
+
+    <div class="video-section" id="videoSection">
+
+        <div class="lesson">
+            <h2>Lesson 1 — Understanding Market Structure</h2>
+
+            <video controls controlsList="nodownload" oncontextmenu="return false;">
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+
+            <div class="note">
+                Topics:
+                <br>• Market Structure
+                <br>• Candlestick Analysis
+                <br>• Trend Direction
+                <br>• Risk Management
+            </div>
+        </div>
+
+        <div class="lesson">
+            <h2>Lesson 2 — Trading Psychology</h2>
+
+            <video controls controlsList="nodownload" oncontextmenu="return false;">
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+
+            <div class="note">
+                Discipline. Patience. Emotional control.
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    TMFX © 2026
+</div>
+
+<script>
+
+const correctPassword = "TMFX2026";
+
+function checkPassword(){
+    const userPassword = document.getElementById("password").value;
+
+    if(userPassword === correctPassword){
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("videoSection").style.display = "block";
+    } else {
+        document.getElementById("error").innerText = "Wrong Password";
+    }
+}
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+document.addEventListener('keydown', function(e) {
+    if (
+        e.ctrlKey &&
+        (e.key === 's' || e.key === 'u' || e.key === 'p')
+    ) {
+        e.preventDefault();
+    }
+});
+
+</script>
+
+</body>
+</html>
+"""
+
